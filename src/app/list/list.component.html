@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-lg-12">
+       <a class="btn btn-primary" href="http://localhost:4200/">Add New Entry</a>
+    </div>
+  </div>
+<br>
+  <strong> <h3>Bike Details</h3> </strong>
+  <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">BrandName</th>
+            <th scope="col">TripRate</th>
+            <th scope="col">BikeBranch</th>
+            <th scope="col">CurrentLocation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blog of blogList; let i = index;">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{blog.brandname}}</td>
+            <td>{{blog.triprate}}</td>
+            <td>{{blog.bikebranch}}</td>
+            <td>{{blog.currentlocation}}</td>
+            <td>
+                <a routerLink="../edit/{{blog.id}}" class="btn btn-primary btn-sm">Edit</a>
+                <button (click)="deleteBlog(blog.id)" class="btn btn-danger btn-sm">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
